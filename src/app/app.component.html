@@ -1,0 +1,20 @@
+<select [(ngModel)]="selectedMonth" (change)="onMonthChange($event)">
+  <option *ngFor="let month of months" [value]="month.value">
+    {{ month.name }}
+  </option>
+</select>
+
+<pixie-highcharts
+  [type]="type"
+  [zoomType]="zoomType"
+  [data]="data"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [footer]="footer"
+  [colors]="color"
+  [tooltip]="tooltip"
+  [export]="exporting"
+  [config]="config"
+  (load)="onLoad($event)"
+>
+</pixie-highcharts>
